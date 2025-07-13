@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\LayananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'home'])->name('home.page');
+Route::get('/layanan', [PageController::class, 'services'])->name('layanan.page');
+Route::get('/tentang-kami', [PageController::class, 'about'])->name('about.page');
+Route::get('/testimoni', [PageController::class, 'testimoni'])->name('testimoni.page');
+Route::get('/faq', [PageController::class, 'faq'])->name('faq.page');
