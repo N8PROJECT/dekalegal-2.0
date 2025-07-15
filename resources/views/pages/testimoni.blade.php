@@ -1,16 +1,22 @@
 @extends('layouts.app')
 
-@section('title', 'Testimoni')
+@section('title', 'Testimoni | Deka Legal')
 
-@section('content')
-    <section class="bg-white py-16">
+@section('page-fullwidth')
+
+    {{-- Hero Banner --}}
+    <section class="relative h-[400px] md:h-[500px] bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('{{ asset('images/banner.png') }}');">
+        {{-- Overlay merah marun transparan --}}
+        <div class="bg-[#8C011F]/60 w-full h-full absolute inset-0 z-0"></div>
+
+        <div class="relative z-10 text-center text-white px-6">
+            <h1 class="ttext-4xl md:text-6xl font-extrabold mb-4 tracking-tight">Testimoni</h1>
+        </div>
+    </section>
+
+    <section class="bg-white py-16" data-aos="fade-up">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            {{-- Heading --}}
-            <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-[#8C011F]">Testimoni Klien Kami</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-10">
-                Lihat bagaimana kami telah menjadi bagian dari keberhasilan legalitas berbagai bisnis di Indonesia.
-            </p>
-
             {{-- Grid Testimoni --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 @for ($i = 1; $i <= 12; $i++)
@@ -26,13 +32,7 @@
                     </div>
                 @endfor
             </div>
-
-            {{-- Button ke Halaman Kontak / Konsultasi --}}
-            <div class="mt-10">
-                <a href="https://wa.me/message/UFGAP35HNAXVJ1" class="inline-block px-6 py-3 rounded-md bg-[#8C011F] text-white font-medium hover:bg-white hover:text-[#8C011F] border border-[#8C011F] transition">
-                    Hubungi Kami
-                </a>
-            </div>
         </div>
     </section>
+
 @endsection

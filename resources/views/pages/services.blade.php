@@ -1,84 +1,87 @@
 @extends('layouts.app')
 
-@section('title', 'Layanan Kami')
+@section('title', 'Services | Deka Legal')
 
-@section('fullwidth')
-    <section class="bg-[#8C011F] py-16 text-white text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Layanan Legalitas</h2>
-        <p class="text-lg max-w-2xl mx-auto">Kami bantu Anda mendirikan dan mengurus legalitas usaha secara profesional dan efisien.</p>
+@section('page-fullwidth')
+    {{-- Hero Banner --}}
+    <section class="relative h-[400px] md:h-[500px] bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('{{ asset('images/banner.png') }}');">
+        {{-- Overlay merah marun transparan --}}
+        <div class="bg-[#8C011F]/60 w-full h-full absolute inset-0 z-0"></div>
+
+        <div class="relative z-10 text-center text-white px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">Services</h1>
+        </div>
     </section>
-    @endsection
 
-@section('content')
+    <section class="bg-white py-24 flex items-center justify-center" data-aos="fade-up">
+        <div class="max-w-6xl w-full px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                {{-- Pendirian Usaha --}}
+                <a href="{{ route('layanan.pendirian') }}"
+                class="group relative rounded-xl p-8 h-[280px] md:h-[300px] lg:h-[320px] bg-[#F9F9F9] shadow-md transition-all duration-300 overflow-hidden 
+                        hover:shadow-[0_0_20px_rgba(140,1,31,0.4)] hover:-translate-y-1 
+                        hover:bg-white border border-transparent hover:border-[#8C011F] hover:ring-1 hover:ring-[#8C011F]/50">
 
-<section class="bg-white py-16">
-    <div class="max-w-6xl mx-auto px-4 space-y-16">
+                    {{-- Border glowing overlay --}}
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
 
-        {{-- Pendirian Badan Usaha --}}
-        <div>
-            <h3 class="text-2xl font-bold mb-8 text-[#8C011F]">Pendirian Badan Usaha</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {{-- PT Perorangan --}}
-                <x-layanan-card title="PT Perorangan" harga="Rp 1,5 Juta" desc="Bentuk usaha perseorangan dengan perlindungan hukum." />
+                    {{-- Konten utama --}}
+                    <div class="relative z-10 text-center flex flex-col justify-center h-full">
+                        <img src="{{ asset('images/icons/enterprise.png') }}" alt="Pendirian Usaha" class="mx-auto h-16 mb-4">
+                        <h3 class="text-xl font-bold text-[#8C011F]">Pendirian Perusahaan</h3>
+                    </div>
+                </a>
 
-                {{-- CV --}}
-                <x-layanan-card title="CV" harga="Rp 3,5 Juta" desc="Layanan pendirian CV yang cepat dan terjangkau." />
+                {{-- Legalitas & Perizinan --}}
+                <a href="{{ route('layanan.legalitas') }}"
+                class="group relative rounded-xl p-8 h-[280px] md:h-[300px] lg:h-[320px] bg-[#F9F9F9] shadow-md transition-all duration-300 overflow-hidden 
+                        hover:shadow-[0_0_20px_rgba(140,1,31,0.4)] hover:-translate-y-1 
+                        hover:bg-white border border-transparent hover:border-[#8C011F] hover:ring-1 hover:ring-[#8C011F]/50">
 
-                {{-- Firma --}}
-                <x-layanan-card title="Firma" harga="Rp 5 Juta" desc="Pendirian usaha berbentuk firma secara sah dan efisien." :fitur="[
-                    'Akta Pendirian Firma', 'SK Pengadilan Negeri', 'NPWP Badan',
-                    'NIB', 'Surat Keterangan Domisili Usaha'
-                ]" />
+                    {{-- Border glowing overlay --}}
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
 
-                {{-- Koperasi --}}
-                <x-layanan-card title="Koperasi" harga="Rp 5 Juta" desc="Solusi legalitas koperasi yang lengkap dan profesional." :fitur="[
-                    'Pembuatan Akta Koperasi', 'Pengurusan NIB & NPWP', 'Legalitas lengkap'
-                ]" />
+                    {{-- Konten utama --}}
+                    <div class="relative z-10 text-center flex flex-col justify-center h-full">
+                        <img src="{{ asset('images/icons/iso.png') }}" alt="Pendirian Usaha" class="mx-auto h-16 mb-4">
+                        <h3 class="text-xl font-bold text-[#8C011F]">Legalitas & Perizinan</h3>
+                    </div>
+                </a>
 
-                {{-- Yayasan & Perkumpulan --}}
-                <x-layanan-card title="Yayasan & Perkumpulan" harga="Rp 5 Juta" desc="Badan hukum untuk kegiatan sosial, pendidikan, atau komunitas." />
+                {{-- Paket Gabungan --}}
+                <a href="{{ route('layanan.paket') }}"
+                class="group relative rounded-xl p-8 h-[280px] md:h-[300px] lg:h-[320px] bg-[#F9F9F9] shadow-md transition-all duration-300 overflow-hidden 
+                        hover:shadow-[0_0_20px_rgba(140,1,31,0.4)] hover:-translate-y-1 
+                        hover:bg-white border border-transparent hover:border-[#8C011F] hover:ring-1 hover:ring-[#8C011F]/50">
 
-                {{-- PT PMA --}}
-                <x-layanan-card title="PT PMA" harga="Rp 8,5 Juta" desc="Pendirian Perseroan Modal Asing untuk investor luar negeri." />
+                    {{-- Border glowing overlay --}}
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
+
+                    {{-- Konten utama --}}
+                    <div class="relative z-10 text-center flex flex-col justify-center h-full">
+                        <img src="{{ asset('images/icons/box.png') }}" alt="Pendirian Usaha" class="mx-auto h-16 mb-4">
+                        <h3 class="text-xl font-bold text-[#8C011F]">Paket Pendirian PT</h3>
+                    </div>
+                </a>
+
+                {{-- Perpajakan --}}
+                <a href="{{ route('layanan.perpajakan') }}"
+                class="group relative rounded-xl p-8 h-[280px] md:h-[300px] lg:h-[320px] bg-[#F9F9F9] shadow-md transition-all duration-300 overflow-hidden 
+                        hover:shadow-[0_0_20px_rgba(140,1,31,0.4)] hover:-translate-y-1 
+                        hover:bg-white border border-transparent hover:border-[#8C011F] hover:ring-1 hover:ring-[#8C011F]/50">
+
+                    {{-- Border glowing overlay --}}
+                    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
+
+                    {{-- Konten utama --}}
+                    <div class="relative z-10 text-center flex flex-col justify-center h-full">
+                        <img src="{{ asset('images/icons/box.png') }}" alt="Pendirian Usaha" class="mx-auto h-16 mb-4">
+                        <h3 class="text-xl font-bold text-[#8C011F]">Perpajakan</h3>
+                    </div>
+                </a>
             </div>
         </div>
+    </section>
 
-        {{-- Legalitas & Perizinan --}}
-        <div>
-            <h3 class="text-2xl font-bold mb-8 text-[#8C011F]">Legalitas & Perizinan</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <x-layanan-card title="Perubahan Akta" harga="Rp 4,5 Juta" desc="Perubahan data perusahaan secara resmi dan cepat." />
-                <x-layanan-card title="Pendaftaran Merek" harga="Rp 3,5 Juta" desc="Lindungi identitas brand Anda secara hukum." :fitur="[
-                    'Konsultasi & Analisis Merek', 'Permohonan & Monitoring', 'Layanan Pasca Pendaftaran', 'Sertifikat HKI'
-                ]" />
-                <x-layanan-card title="Contract Drafting" harga="Rp 1,5 – 2,5 Juta" desc="Pembuatan dan review kontrak bisnis oleh tim hukum ahli." :fitur="[
-                    'Perjanjian Bahasa Indonesia – Rp 1,5 Juta',
-                    'Perjanjian Bilingual (ENG-ID) – Rp 2,5 Juta'
-                ]" />
-                <x-layanan-card title="Sertifikasi ISO" harga="Mulai dari Rp 3 Juta" desc="Dapatkan sertifikasi ISO sesuai standar internasional." />
-                <x-layanan-card title="SIUJPT" harga="Rp 23,5 Juta" desc="Izin usaha jasa pengurusan transportasi darat, laut, udara." />
-                <x-layanan-card title="TDPSE" harga="Rp 2 Juta" desc="Daftarkan usaha elektronik Anda sesuai regulasi Kominfo." />
-                <x-layanan-card title="IDAK/IPAK" harga="Rp 16,5 Juta" desc="Izin untuk usaha alat kesehatan, resmi dan lengkap." />
-                <x-layanan-card title="SBUJK" harga="Mulai dari Rp 21,5 Juta" desc="Pengurusan SBUJK lengkap dengan SKK dan KTA." :fitur="[
-                    'KTA Asosiasi', 'Sertifikasi SKK Tenaga Ahli', 'Penerbitan SBUJK'
-                ]" />
-            </div>
-        </div>
-
-        {{-- Layanan Paket Gabungan --}}
-        <div>
-            <h3 class="text-2xl font-bold mb-8 text-[#8C011F]">Paket Gabungan</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <x-layanan-card title="Paket PT Start-Up" harga="Rp 5 Juta" desc="Paket hemat untuk memulai bisnis Anda dengan cepat dan legal." />
-                <x-layanan-card title="Paket PT Scale Up" harga="Rp 5,5 Juta" desc="Dukungan lengkap untuk perusahaan yang siap berkembang." />
-                <x-layanan-card title="Paket PT All-in" harga="Rp 7,5 Juta" desc="Layanan menyeluruh mulai dari pendirian hingga operasional." />
-                <x-layanan-card title="PT + Merek" harga="Rp 6,5 Juta" desc="Paket pendirian perusahaan sekaligus pendaftaran merek dagang." />
-                <x-layanan-card title="PT + Branding" harga="Rp 6,5 Juta" desc="Legalitas usaha sekaligus identitas brand profesional." :fitur="[
-                    'Pendirian PT & CV', 'Pengurusan Berkas & Administrasi',
-                    'Branding & Rebranding', 'Social Media Management'
-                ]" />
-            </div>
-        </div>
-    </div>
-</section>
 @endsection

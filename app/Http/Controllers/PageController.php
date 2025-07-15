@@ -26,4 +26,19 @@ class PageController extends Controller
         return view('pages.faq');
     }
 
+    // Layanan
+
+    public function pendirianusaha() {
+        return view('pages.layanan.pendirian');
+    }
+    public function legalitas() {
+        return view('pages.layanan.legalitas');
+    }
+    public function paketgabungan() {
+        return view('pages.layanan.paket');
+    }
+    public function perpajakan() {
+        return view('pages.layanan.perpajakan');
+    }
+
 }

@@ -21,11 +21,23 @@
     {{-- Navbar --}}
     @include('partials.navbar')
 
-    @yield('fullwidth')
+    @yield('page-fullwidth')
 
     <main class="container mx-auto px-4 py-6">
-        @yield('content')
+        {{-- Bagian Hero & Clients --}}
+        @yield('content-top')
+
     </main>
+
+    {{-- Full-width Section di tengah (Layanan Kami) --}}
+    @stack('middle-section')
+
+    <main class="container mx-auto px-4 py-6">
+        {{-- Bagian About & Testimoni --}}
+        @yield('content-bottom')
+    </main>
+
+    @stack('bottom-fullwidth')
 
     {{-- Footer --}}
     @include('partials.footer')
@@ -34,6 +46,14 @@
     @stack('scripts')
 
     @vite('resources/js/app.js')
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true, // animasi hanya sekali
+        });
+    </script>
 
 </body>
 </html>

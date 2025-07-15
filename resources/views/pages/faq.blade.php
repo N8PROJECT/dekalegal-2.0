@@ -1,14 +1,23 @@
 @extends('layouts.app')
 
-@section('title', 'FAQ')
+@section('title', 'FAQ | Deka Legal')
 
-@section('content')
-<section class="bg-white py-16">
+@section('page-fullwidth')
+
+{{-- Hero Banner --}}
+<section class="relative h-[400px] md:h-[500px] bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('{{ asset('images/banner.png') }}');">
+    {{-- Overlay merah marun transparan --}}
+    <div class="bg-[#8C011F]/60 w-full h-full absolute inset-0 z-0"></div>
+
+    <div class="relative z-10 text-center text-white px-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">FAQ</h1>
+    </div>
+</section>
+
+<section class="bg-white py-16" data-aos="fade-up">
+
     <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-semibold text-center text-[#8C011F] mb-4">FAQ</h2>
-        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-            Temukan jawaban atas pertanyaan yang sering ditanyakan mengenai layanan legalitas kami.
-        </p>
 
         {{-- Accordion FAQ --}}
         <div class="space-y-4">
@@ -76,14 +85,7 @@
                 </div>
             @endforeach
         </div>
-
-        {{-- Butuh bantuan lebih lanjut --}}
-        <div class="mt-12 text-center">
-            <p class="text-gray-700 mb-4">Masih punya pertanyaan?</p>
-            <a href="https://wa.me/message/UFGAP35HNAXVJ1" class="inline-block px-6 py-3 rounded-md bg-[#8C011F] text-white font-medium hover:bg-white hover:text-[#8C011F] border border-[#8C011F] transition">
-                Hubungi Kami
-            </a>
-        </div>
     </div>
+
 </section>
 @endsection
